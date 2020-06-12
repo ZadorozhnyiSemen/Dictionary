@@ -9,6 +9,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -24,8 +25,10 @@ object RepositoryModule {
     }
 
     @Provides
+    @Singleton
     fun provideSearchCache(): SearchCache = SearchCache()
 
     @Provides
+    @Singleton
     fun provideMeaningCache(): MeaningCache = MeaningCache()
 }

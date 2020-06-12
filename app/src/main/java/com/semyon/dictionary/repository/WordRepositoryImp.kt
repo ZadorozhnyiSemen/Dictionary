@@ -8,11 +8,12 @@ import com.semyon.dictionary.repository.cache.SearchCache
 import com.semyon.dictionary.repository.network.SkyEngApi
 import io.reactivex.Maybe
 import javax.inject.Inject
+import javax.inject.Singleton
 
 class WordRepositoryImp @Inject constructor(
     private val api: SkyEngApi,
-    private val searchCache: SearchCache,
-    private val meaningCache: MeaningCache
+    @Singleton private val searchCache: SearchCache,
+    @Singleton private val meaningCache: MeaningCache
 ) : WordRepository {
     override fun searchForWord(query: String): Maybe<List<PreviewWord>> {
         searchCache.itemsForQuery(query)?.let {

@@ -1,11 +1,11 @@
 package com.semyon.dictionary.screen.search
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import com.semyon.dictionary.R
@@ -27,8 +27,7 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        searchViewModel.searchResult.observe(this, Observer { list ->
-            println(list)
+        searchViewModel.searchResult.observe(this, Observer { list ->4
             searchAdapter.searchItems = ArrayList(list)
         })
 
