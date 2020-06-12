@@ -11,7 +11,9 @@ import com.semyon.dictionary.R
 import com.semyon.dictionary.model.PreviewWord
 import kotlinx.android.synthetic.main.item_search_result.view.*
 
-class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResultViewHolder>() {
+class SearchResultAdapter(
+    private val listener: (PreviewWord) -> Unit
+) : RecyclerView.Adapter<SearchResultAdapter.SearchResultViewHolder>() {
 
     var searchItems = arrayListOf<PreviewWord>()
         set(value) {
@@ -31,7 +33,7 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResul
         val item = searchItems[position]
 
         holder.apply {
-            println(item)
+            itemView.setOnClickListener { listener(item) }
             Glide.with(holder.itemView.context)
                 .load(item.getPreview())
                 .circleCrop()

@@ -1,14 +1,19 @@
 package com.semyon.dictionary.screen.search
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import com.semyon.dictionary.R
+import com.semyon.dictionary.model.PreviewWord
 import com.semyon.dictionary.screen.search.adapter.SearchResultAdapter
 import com.semyon.dictionary.screen.search.vm.SearchViewModel
+import com.semyon.dictionary.screen.word.WORD_ID_KEY
+import com.semyon.dictionary.screen.word.WordActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_search.*
 
@@ -32,7 +37,9 @@ class SearchActivity : AppCompatActivity() {
             hint.visibility = if (showList) View.GONE else View.VISIBLE
         })
 
-        searchAdapter = SearchResultAdapter()
+        searchAdapter = SearchResultAdapter { item ->
+            openDetails(item)
+        }
         words_result.apply {
             adapter = searchAdapter
         }
@@ -47,6 +54,13 @@ class SearchActivity : AppCompatActivity() {
                 }
                 return false
             }
+        })
+        search.imeOptions = search.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI
+    }
+
+    private fun openDetails(word: PreviewWord) {
+        startActivity(Intent(this, WordActivity::class.java).apply {
+            putExtra(WORD_ID_KEY, word.meanings.first().id)
         })
     }
 }
