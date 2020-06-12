@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dictionary</string>
+    <string name="text_hint">Ищите новые слова\nи расширяйте словарный запас</string>
+    <string name="search_hint">Поиск в словаре</string>
 </resources>
