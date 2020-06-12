@@ -17,6 +17,3 @@ data class FullMeaning(
     val examples: List<WordExample>
 )
 
-data class WordImage(val url: String)
-data class WordDefinition(val text: String, val soundUrl: String)
-data class WordExample(val text: String, val soundUrl: String)
