@@ -4,14 +4,12 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".screen.word.WordActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="304dp"
-        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -19,7 +17,7 @@
             android:layout_height="200dp"
             android:minHeight="40dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="#FFFFFF">
+            app:contentScrim="#F6F8FB">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/word_image"
@@ -51,23 +49,38 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="104dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="#FFFFFF">
+            android:paddingBottom="16dp"
+            android:background="#F6F8FB">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/word_origin"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_bold"
                 android:textColor="@color/colorAccent"
                 android:textSize="26sp"
-                app:layout_constraintEnd_toStartOf="@id/play_translation"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Friend" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/word_transcription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/roboto"
+                android:alpha="0.5"
+                android:textColor="#000000"
+                tools:text="/frend"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/word_origin"
+                app:layout_constraintEnd_toStartOf="@id/play_translation"
+                app:layout_constraintBaseline_toBaselineOf="@id/word_origin"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/word_translation"
@@ -77,6 +90,21 @@
                 android:fontFamily="@font/roboto"
                 app:layout_constraintStart_toStartOf="@id/word_origin"
                 app:layout_constraintTop_toBottomOf="@id/word_origin"
+                tools:text="Друг" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/word_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="16sp"
+                android:letterSpacing="0.1"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintStart_toStartOf="@id/word_translation"
+                app:layout_constraintTop_toBottomOf="@id/word_translation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 tools:text="Друг" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -89,6 +117,14 @@
                 app:layout_constraintTop_toTopOf="@id/word_origin"
                 app:layout_constraintBottom_toBottomOf="@id/word_origin"
                 app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#0FFFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
