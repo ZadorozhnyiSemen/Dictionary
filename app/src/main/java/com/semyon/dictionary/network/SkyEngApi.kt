@@ -16,5 +16,5 @@ interface SkyEngApi {
     ): Maybe<List<PreviewWord>>
 
     @GET("/api/public/v1/meanings")
-    fun requestMeaning(@Query(value = "ids") ids: String): Maybe<FullMeaning>
+    fun requestMeaning(@Query(value = "ids") ids: String): Maybe<List<FullMeaning>>
 }
