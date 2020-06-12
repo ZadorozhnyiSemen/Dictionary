@@ -1,5 +1,8 @@
 package com.semyon.dictionary.network
 
+import com.semyon.dictionary.model.FullMeaning
+import com.semyon.dictionary.model.PreviewWord
+import io.reactivex.Maybe
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -10,8 +13,8 @@ interface SkyEngApi {
         @Query(value = "search") query: String,
         @Query(value = "page") page: Int = 0,
         @Query(value = "pageSize") size: Int = 20
-    )
+    ): Maybe<List<PreviewWord>>
 
     @GET("/api/public/v1/meanings")
-    fun requestMeaning(@Query(value = "ids") ids: String)
+    fun requestMeaning(@Query(value = "ids") ids: String): Maybe<FullMeaning>
 }

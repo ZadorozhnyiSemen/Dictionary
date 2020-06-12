@@ -17,7 +17,3 @@ data class WordMeaning(
     val soundUrl: String
 )
 
-data class WordTranslation(
-    val text: String,
-    val note: String
-)
