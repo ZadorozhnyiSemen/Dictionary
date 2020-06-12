@@ -1,6 +1,6 @@
 package com.semyon.dictionary.dagger
 
-import com.semyon.dictionary.network.SkyEngApi
+import com.semyon.dictionary.repository.network.SkyEngApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.semyon.dictionary.network
+package com.semyon.dictionary.repository.network
 
 import com.semyon.dictionary.model.FullMeaning
 import com.semyon.dictionary.model.PreviewWord
