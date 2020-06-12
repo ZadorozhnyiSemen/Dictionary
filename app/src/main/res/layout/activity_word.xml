@@ -54,26 +54,30 @@
             android:layout_height="104dp"
             android:layout_gravity="bottom"
             android:background="#FFFFFF">
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/word_origin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:text="Friend"
-                android:textSize="26sp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toStartOf="@id/play_translation"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/play_translation"/>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Friend" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/word_translation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                tools:text="Друг"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintStart_toStartOf="@id/word_origin"
                 app:layout_constraintTop_toBottomOf="@id/word_origin"
-                app:layout_constraintStart_toStartOf="@id/word_origin" />
+                tools:text="Друг" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/play_translation"
