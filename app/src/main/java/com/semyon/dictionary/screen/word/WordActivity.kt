@@ -1,4 +1,4 @@
-package com.semyon.dictionary.screen
+package com.semyon.dictionary.screen.word
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
