@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="?android:attr/selectableItemBackground"
-    android:padding="16dp"
     android:gravity="center_vertical"
     android:clickable="true"
     android:focusable="true"
@@ -13,6 +12,7 @@
     
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/item_image"
+        android:layout_marginStart="16dp"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
@@ -27,6 +27,9 @@
             android:id="@+id/item_original"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#000"
             android:singleLine="true"
             android:ellipsize="marquee"
             tools:text="@tools:sample/lorem/random"/>
@@ -34,6 +37,8 @@
             android:id="@+id/item_translation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="#80000000"
             android:singleLine="true"
             android:ellipsize="marquee"
             tools:text="@tools:sample/lorem/random"/>
@@ -42,6 +47,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/ic_pointer_24"/>
 
 </LinearLayout>
