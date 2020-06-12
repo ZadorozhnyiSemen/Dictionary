@@ -19,7 +19,6 @@ class SearchViewModel @ViewModelInject constructor(
     val hasResults: MutableLiveData<Boolean> = MutableLiveData(false)
 
     fun changeSearchQuery(query: String) {
-        println("call ${query}")
         bag.add(searchInteractor.updateSearchResult(query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
