@@ -4,7 +4,6 @@ data class PreviewWord(
     val id: Int,
     val text: String,
     val meanings: List<WordMeaning>
-
 )
 
 data class WordMeaning(
