@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.semyon.dictionary.R
 import com.semyon.dictionary.model.PreviewWord
 import kotlinx.android.synthetic.main.item_search_result.view.*
@@ -30,6 +31,12 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResul
         val item = searchItems[position]
 
         holder.apply {
+            println(item)
+            Glide.with(holder.itemView.context)
+                .load(item.getPreview())
+                .circleCrop()
+                .into(image)
+
             origin.text = item.text
             translation.text = item.meanings.first().translation.text
         }
