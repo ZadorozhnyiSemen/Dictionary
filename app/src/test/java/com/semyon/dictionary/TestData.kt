@@ -17,12 +17,12 @@ val secondFullMeaning = FullMeaning(2, 43, 4, "empty",
     "empty", "empty", "empty", "empty", "empty",
     "empty", translation, images, wordDefinition, wordExamples)
 
-val meaningList = listOf<FullMeaning>(
+val meaningList = listOf(
     firstFullMeaning,
     secondFullMeaning
 )
 
-val previewList = listOf<PreviewWord>(
+val previewList = listOf(
     PreviewWord(1, "test1", listOf(wordMeaning)),
     PreviewWord(2, "test2", listOf(wordMeaning)),
     PreviewWord(3, "test3", listOf(wordMeaning))
