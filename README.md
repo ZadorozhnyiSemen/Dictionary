@@ -16,5 +16,6 @@ MVVM
 - Image library - Glide
 - Networking - Retrofit
 - UI - [CardView, RecyclerView, Material library]
+- Tests - [JUnit4, MockK]
 Testing - JUnit4
 
