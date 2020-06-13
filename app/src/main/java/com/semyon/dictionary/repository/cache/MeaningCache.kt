@@ -11,6 +11,5 @@ class MeaningCache {
 
     fun saveWord(wordId: String, words: List<FullMeaning>) {
         cache[wordId] = words
-        println(cache.toString())
     }
 }
